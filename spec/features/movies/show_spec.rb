@@ -52,7 +52,7 @@ RSpec.describe 'Movie Show' do
       expect(page).to have_content('Average age of actors: 61')
     end
 
-    xit 'has a form to add an actor for this movie' do
+    it 'has a form to add an actor for this movie' do
       expect(page).to have_content("Add an actor for #{@raiders.title}")
       expect(page).to have_button('Submit')
       expect(current_path).to eq("/movies/#{@raiders.id}")
