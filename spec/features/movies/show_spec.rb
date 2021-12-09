@@ -66,7 +66,6 @@ RSpec.describe 'Movie Show' do
 
       expect(current_path).to eq("/movies/#{@raiders.id}")
       expect(page).to have_content('Existing Actor')
-      save_and_open_page
     end
   end
 end
