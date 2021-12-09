@@ -57,5 +57,16 @@ RSpec.describe 'Movie Show' do
       expect(page).to have_button('Submit')
       expect(current_path).to eq("/movies/#{@raiders.id}")
     end
+
+    it 'can add an actor that exists for this movie' do
+      fill_in(:name, with: 'Existing Actor')
+      fill_in(:age, with: 90)
+
+      click_button('Submit')
+
+      expect(current_path).to eq("/movies/#{@raiders.id}")
+      expect(page).to have_content('Existing Actor')
+      save_and_open_page
+    end
   end
 end

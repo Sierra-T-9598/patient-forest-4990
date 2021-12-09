@@ -11,7 +11,7 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
     @actor = @movie.actors.create!(actor_params)
     @actor.save
-    # redirect_to "/movies/#{@move.id}"
+    redirect_to "/movies/#{@movie.id}"
   end
 
   private
