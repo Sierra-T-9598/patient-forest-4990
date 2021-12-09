@@ -5,4 +5,8 @@ class Actor < ApplicationRecord
   def self.by_age
     order(:age)
   end
+
+  def self.average_age
+    average(:age)
+  end 
 end
