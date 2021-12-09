@@ -11,7 +11,7 @@
 
 <h2>Add an actor for <%=@movie.title%>:</h2>
 
-<%= form_with url: "/movies/#{@movie.id}/actors/new", method: :post, local: true do |form| %>
+<%= form_with url: "/movies/#{@movie.id}", method: :post, local: true do |form| %>
   <p><%= form.label :name %>
   <%= form.text_field :name %></p>
 
