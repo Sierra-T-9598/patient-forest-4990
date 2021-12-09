@@ -32,6 +32,7 @@ RSpec.describe 'Actor Show' do
     it 'list coactors for this actor' do
       expect(page).to have_content(@actor_2.name)
       expect(page).to have_content(@actor_3.name)
+      expect(page).to_not have_content(@actor_6.name)
     end
   end
 end

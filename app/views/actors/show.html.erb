@@ -4,6 +4,6 @@
 <h2>Coactors:</h2>
 <% @actor.movies.each do |movie| %>
   <% movie.actors.each do |actor| %>
-    <%= actor.name %>
+    <p><%= actor.name %></p>
   <% end %>
 <% end %>
