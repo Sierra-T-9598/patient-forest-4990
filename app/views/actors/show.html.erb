@@ -2,3 +2,8 @@
 <p>Age: <%=@actor.age%></p>
 
 <h2>Coactors:</h2>
+<% @actor.movies.each do |movie| %>
+  <% movie.actors.each do |actor| %>
+    <%= actor.name %>
+  <% end %>
+<% end %>
