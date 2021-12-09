@@ -27,6 +27,7 @@ RSpec.describe 'Studio Index' do
       expect(page).to have_content(@shrek.title)
       expect(page).to have_content(@proposal.title)
       expect(page).to have_content(@dune.title)
+
     end
   end
 end
