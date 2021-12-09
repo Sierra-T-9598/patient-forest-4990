@@ -13,7 +13,9 @@ RSpec.describe 'Movie Show' do
 
       @studio_2 = Studio.create!(name: 'Best Studio', location: 'Paris')
       @proposal = @studio_2.movies.create!(title: 'The Proposal', creation_year: 2000, genre: 'Comedy/Romance')
+      @actor_5 = @proposal.actors.create!(name: 'Sandra Bullock', age: 40)
       @dune = @studio_2.movies.create!(title: 'Dune', creation_year: 2021, genre: 'Action/Adventure')
+      @actor_6 = @dune.actors.create!(name: 'Zendaya', age: 40)
 
       visit "/movies/#{@raiders.id}"
     end
@@ -38,7 +40,12 @@ RSpec.describe 'Movie Show' do
       expect(@actor_3.name).to appear_before(@actor_2.name)
       expect(@actor_2.name).to_not appear_before(@actor_1.name)
       expect(page).to_not have_content(@actor_4.name)
+    end
 
+    it 'does not list actors that are not part of the movie' do
+      expect(page).to_not have_content(@actor_4.name)
+      expect(page).to_not have_content(@actor_5.name)
+      expect(page).to_not have_content(@actor_6.name)
     end
 
     it 'shows the average age of all the actors' do
